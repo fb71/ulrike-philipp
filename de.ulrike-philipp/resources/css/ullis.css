@@ -1,0 +1,130 @@
+/*
+ * Batik CSS: Navigation, Section-Titles etc., nicht der normale Text
+ */
+* {
+  color: #f8f8f8;
+  background-color: #74635C;
+  background-image: none;
+  font: 14px/120% 'Droid Sans', Helvetica, Arial, sans-serif;
+}
+
+/* Navigation */
+Composite, Composite[BORDER] {
+  font: 14px/120% 'Droid Sans', Helvetica, Arial, sans-serif;
+  color: #f8f8f8;
+  background-color: #74635C;
+  /*background-color: #9B918C;*/
+}
+Composite.cms-panels {
+  font: 14px/120% 'Droid Sans', Helvetica, Arial, sans-serif;
+  color: #f8f8f8;
+  background-color: #74635C; 
+  border: none;
+}
+Composite.cms-panels-outer {
+  font: 14px/120% 'Droid Sans', Helvetica, Arial, sans-serif;
+  color: #f8f8f8;
+  /*background-image: url(resources/images/pattern-alu2.png);*/
+  background-color: #74635C; 
+  border: none;
+}
+Composite[BORDER].cms-panels {
+  border: 1px solid #f0f0f0;
+  border-radius: 3px;
+  box-shadow: 0px 0px 3px #303030;
+}
+Button[TOGGLE].atlas-navi, Button[PUSH].atlas-navi {
+  font: 14px/120% 'Droid Sans', Helvetica, Arial, sans-serif;
+  color: #ffffff;
+  background-color: #74635C;
+  background-image: none;
+  border: none;
+  text-shadow: none;
+}
+Button[TOGGLE]:selected.atlas-navi, Button[TOGGLE]:hover.atlas-navi, Button[PUSH]:hover.atlas-navi {
+  font: 14px/120% 'Droid Sans', Helvetica, Arial, sans-serif;
+  color: #ffffff;
+  background-color: #9B918C;
+  background-image: none;
+  border: none;
+}
+
+/* Batik Panel Section */
+Composite.batik-panel-section-client {
+  font: 14px/120% 'Droid Sans', Helvetica, Arial, sans-serif;
+  color: #f8f8f8;
+  background-color: #74635C;
+}
+Composite.batik-panel-section {
+  font: 14px/120% 'Droid Sans', Helvetica, Arial, sans-serif;
+  color: #f8f8f8;
+  background-color: #74635C;
+}
+Label.batik-panel-section-title {
+  font: 22px/100% 'Droid Sans', Helvetica, Arial, sans-serif;
+  background-color: #74635C;
+  color: #f8f8f8;
+  border: none;
+}
+Label:disabled.batik-panel-section-title {
+  opacity: 0.3;
+}
+Label[SEPARATOR].batik-panel-section-separator, Label.batik-panel-section-separator {
+  background-color: #303030;
+  color: #f8f8f8;
+}
+
+Label-SeparatorLine.batik-panel-section-separator {
+  background-image: none;
+  background-color: #CDC0B9;
+  border: 0px solid #000000;
+  width: 1px;
+  color: #000000;
+}
+/*Label-SeparatorLine[SHADOW_IN] {
+  width: 0px;
+  border: 0px inset #74635C;
+}
+Label-SeparatorLine[SHADOW_OUT] {
+  width: 1px;
+  border: 1px solid #9B918C;
+}*/
+
+
+/* */
+Label {
+  font: 14px/120% 'Droid Sans', Helvetica, Arial, sans-serif;
+  color: #f8f8f8;
+}
+
+/* ScrollBar */
+ScrollBar {
+  background-color: #74635C;
+  background-image: none;
+  border: none;
+  width: 10px;
+}
+ScrollBar-Thumb {
+  background-color: #9B918C;
+  border: 0px solid #cdcdcd;
+  border-radius: 15px;
+  background-image: none;
+  min-height: 20px;
+}
+ScrollBar-UpButton, ScrollBar-DownButton {
+  background-color: transparent;
+  border: none;
+  cursor: default;
+}
+ScrollBar-UpButton[HORIZONTAL] {
+  background-image: url(resources/icons/rap/scrollbar/right.png );
+}
+ScrollBar-DownButton[HORIZONTAL] {
+  background-image: url(resources/icons/rap/scrollbar/left.png );
+}
+ScrollBar-UpButton[VERTICAL] {
+  background-image: url(resources/icons/rap/scrollbar/down.png )
+}
+ScrollBar-DownButton[VERTICAL] {
+  background-image: url(resources/icons/rap/scrollbar/up.png );
+}

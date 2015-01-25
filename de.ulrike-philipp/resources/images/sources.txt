@@ -1,0 +1,2 @@
+email2.png : http://findicons.com/icon/211899/mail?id=369409
+chat.png: http://findicons.com/pack/1965/colorcons_smoke

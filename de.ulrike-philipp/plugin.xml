@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="org.eclipse.rap.ui.branding">
+      <branding
+            body="resources/html/body.html"
+            defaultEntrypointId="org.polymap.rhei.batik.entrypoint"
+            id="de.ulrike-philipp.branding"
+            servletName="up"
+            themeId="org.eclipse.rap.rwt.theme.Default"
+            title="Ullis">
+         <additionalHeaders>
+            <link
+                  href="upres/css/flowtext.css"
+                  rel="stylesheet"></link>            
+            <link
+                  href="http://fonts.googleapis.com/css?family=Droid+Sans"
+                  rel="stylesheet"
+                  type="text/css">
+            </link>
+         </additionalHeaders>
+      </branding>
+   </extension>
+   <extension
+         point="org.eclipse.rap.ui.themes">
+      <themeContribution
+            file="resources/css/ullis.css"
+            themeId="org.eclipse.rap.rwt.theme.Default">
+      </themeContribution>
+   </extension>
+   <extension
+         point="org.polymap.rhei.batik.panels">
+      <panel
+            class="de.ulrikephilipp.StartPanel"
+            id="de.ulrike-philipp.StartPanel">
+      </panel>
+      <panel
+            class="de.ulrikephilipp.TerminePanel"
+            id="de.ulrike-philipp.TerminePanel">
+      </panel>
+      <panel
+            class="de.ulrikephilipp.ImpressumPanel"
+            id="de.ulrike-philipp.ImpressumPanel">
+      </panel>
+   </extension>
+   <extension
+         point="org.polymap.rhei.batik.applicationLayouters">
+      <applicationLayouter
+            class="net.mapstart.cms.CmsApplicationLayouter"
+            id="de.ulrike-philipp.applicationLayouter"
+            servletNameMatcher="/up">
+      </applicationLayouter>
+   </extension>
+
+</plugin>
