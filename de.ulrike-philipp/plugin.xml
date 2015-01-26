@@ -2,6 +2,16 @@
 <?eclipse version="3.4"?>
 <plugin>
    <extension
+         point="org.eclipse.rap.ui.entrypoint">
+      <entrypoint
+            brandingId="de.ulrike-philipp.branding"
+            class="org.polymap.rhei.batik.app.BatikApplication"
+            id="up.entrypoint"
+            parameter="batik"
+            path="/up">
+      </entrypoint>
+   </extension>
+   <extension
          point="org.eclipse.rap.ui.branding">
       <branding
             body="resources/html/body.html"
@@ -47,7 +57,7 @@
    <extension
          point="org.polymap.rhei.batik.applicationLayouters">
       <applicationLayouter
-            class="net.mapstart.cms.CmsApplicationLayouter"
+            class="org.polymap.cms.CmsApplicationLayouter"
             id="de.ulrike-philipp.applicationLayouter"
             servletNameMatcher="/up">
       </applicationLayouter>

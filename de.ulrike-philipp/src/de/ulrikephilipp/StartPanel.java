@@ -3,9 +3,6 @@
  */
 package de.ulrikephilipp;
 
-import net.mapstart.cms.ContentProvider;
-import net.mapstart.cms.ContentProvider.ContentObject;
-
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 
@@ -19,6 +16,9 @@ import org.polymap.rhei.batik.toolkit.IPanelSection;
 import org.polymap.rhei.batik.toolkit.IPanelToolkit;
 import org.polymap.rhei.batik.toolkit.MinWidthConstraint;
 import org.polymap.rhei.batik.toolkit.PriorityConstraint;
+
+import org.polymap.cms.ContentProvider;
+import org.polymap.cms.ContentProvider.ContentObject;
 
 /**
  * The front page of ulrike-philipp.de :)

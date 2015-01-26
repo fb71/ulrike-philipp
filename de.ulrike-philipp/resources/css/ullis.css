@@ -15,20 +15,20 @@ Composite, Composite[BORDER] {
   background-color: #74635C;
   /*background-color: #9B918C;*/
 }
-Composite.cms-panels {
+Composite.cms_panels {
   font: 14px/120% 'Droid Sans', Helvetica, Arial, sans-serif;
   color: #f8f8f8;
   background-color: #74635C; 
   border: none;
 }
-Composite.cms-panels-outer {
+Composite.cms_panels_outer {
   font: 14px/120% 'Droid Sans', Helvetica, Arial, sans-serif;
   color: #f8f8f8;
   /*background-image: url(resources/images/pattern-alu2.png);*/
   background-color: #74635C; 
   border: none;
 }
-Composite[BORDER].cms-panels {
+Composite[BORDER].cms_panels {
   border: 1px solid #f0f0f0;
   border-radius: 3px;
   box-shadow: 0px 0px 3px #303030;
