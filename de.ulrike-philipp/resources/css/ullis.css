@@ -15,20 +15,20 @@ Composite, Composite[BORDER] {
   background-color: #74635C;
   /*background-color: #9B918C;*/
 }
-Composite.cms_panels {
+Composite.cms-panels {
   font: 14px/120% 'Droid Sans', Helvetica, Arial, sans-serif;
   color: #f8f8f8;
   background-color: #74635C; 
   border: none;
 }
-Composite.cms_panels_outer {
+Composite.cms-panels-outer {
   font: 14px/120% 'Droid Sans', Helvetica, Arial, sans-serif;
   color: #f8f8f8;
   /*background-image: url(resources/images/pattern-alu2.png);*/
   background-color: #74635C; 
   border: none;
 }
-Composite[BORDER].cms_panels {
+Composite[BORDER].cms-panels {
   border: 1px solid #f0f0f0;
   border-radius: 3px;
   box-shadow: 0px 0px 3px #303030;
@@ -49,16 +49,24 @@ Button[TOGGLE]:selected.atlas-navi, Button[TOGGLE]:hover.atlas-navi, Button[PUSH
   border: none;
 }
 
-/* Batik Panel Section */
-Composite.batik-panel-section-client {
+/* 
+ *Batik Panel 
+ */
+.batik-panel, [BORDER].batik-panel {
   font: 14px/120% 'Droid Sans', Helvetica, Arial, sans-serif;
   color: #f8f8f8;
+  background-color: #74635C;
+  background-image: none;
+}
+
+/* 
+ * Batik Panel Section 
+ */
+Composite.batik-panel-section, Composite[BORDER].batik-panel-section {
   background-color: #74635C;
 }
-Composite.batik-panel-section {
-  font: 14px/120% 'Droid Sans', Helvetica, Arial, sans-serif;
-  color: #f8f8f8;
-  background-color: #74635C;
+Composite.batik-panel-section-client, Composite[BORDER].batik-panel-section-client {
+  /*background-color: #74635C;*/
 }
 Label.batik-panel-section-title {
   font: 22px/100% 'Droid Sans', Helvetica, Arial, sans-serif;

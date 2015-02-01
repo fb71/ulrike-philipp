@@ -13,7 +13,7 @@
 <booleanAttribute key="default" value="true"/>
 <booleanAttribute key="default_auto_start" value="true"/>
 <intAttribute key="default_start_level" value="4"/>
-<booleanAttribute key="includeOptional" value="true"/>
+<booleanAttribute key="includeOptional" value="false"/>
 <booleanAttribute key="org.eclipse.debug.core.appendEnvironmentVariables" value="true"/>
 <listAttribute key="org.eclipse.debug.ui.favoriteGroups">
 <listEntry value="org.eclipse.debug.ui.launchGroup.debug"/>
@@ -47,5 +47,5 @@
 <booleanAttribute key="tracing" value="false"/>
 <booleanAttribute key="useCustomFeatures" value="false"/>
 <booleanAttribute key="useDefaultConfigArea" value="true"/>
-<stringAttribute key="workspace_bundles" value="de.ulrike-philipp@default:default,org.eclipse.core.filesystem@default:default,org.eclipse.core.resources@default:default,org.eclipse.equinox.security@default:default,org.polymap.cms@default:default,org.polymap.core@default:default,org.polymap.model2@default:default,org.polymap.rap.updownload@default:default,org.polymap.rhei.batik@default:default"/>
+<stringAttribute key="workspace_bundles" value="de.ulrike-philipp@default:default,org.eclipse.core.filesystem@default:default,org.eclipse.core.resources@default:default,org.eclipse.equinox.security@default:default,org.polymap.cms@default:default,org.polymap.core@default:default,org.polymap.rap.updownload@default:default,org.polymap.rhei.batik@default:default,org.polymap.service.fs@default:default"/>
 </launchConfiguration>
