@@ -15,31 +15,28 @@ Composite, Composite[BORDER] {
   background-color: #74635C;
   /*background-color: #9B918C;*/
 }
-Composite.cms-panels {
-  font: 14px/120% 'Droid Sans', Helvetica, Arial, sans-serif;
+Shell.atlas-shell {
+  background-image: none;
+  background-color: #74635C;
+  border: none;
   color: #f8f8f8;
-  background-color: #74635C; 
+}
+Label.up-header, Composite.up-header {
+  font: 35px/120% Arial, Helvetica, sans-serif;
+  color: #f8f8f8;
+  background-image: none;
+  background-color: #74635C;
   border: none;
 }
-Composite.cms-panels-outer {
-  font: 14px/120% 'Droid Sans', Helvetica, Arial, sans-serif;
-  color: #f8f8f8;
-  /*background-image: url(resources/images/pattern-alu2.png);*/
-  background-color: #74635C; 
-  border: none;
-}
-Composite[BORDER].cms-panels {
-  border: 1px solid #f0f0f0;
-  border-radius: 3px;
-  box-shadow: 0px 0px 3px #303030;
-}
+
 Button[TOGGLE].atlas-navi, Button[PUSH].atlas-navi {
   font: 14px/120% 'Droid Sans', Helvetica, Arial, sans-serif;
-  color: #ffffff;
+  color: #f8f8f8;
   background-color: #74635C;
   background-image: none;
   border: none;
   text-shadow: none;
+  border-radius: 3px;
 }
 Button[TOGGLE]:selected.atlas-navi, Button[TOGGLE]:hover.atlas-navi, Button[PUSH]:hover.atlas-navi {
   font: 14px/120% 'Droid Sans', Helvetica, Arial, sans-serif;
@@ -50,7 +47,7 @@ Button[TOGGLE]:selected.atlas-navi, Button[TOGGLE]:hover.atlas-navi, Button[PUSH
 }
 
 /* 
- *Batik Panel 
+ * Batik Panel 
  */
 .batik-panel, [BORDER].batik-panel {
   font: 14px/120% 'Droid Sans', Helvetica, Arial, sans-serif;

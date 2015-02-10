@@ -47,5 +47,5 @@
 <booleanAttribute key="tracing" value="false"/>
 <booleanAttribute key="useCustomFeatures" value="false"/>
 <booleanAttribute key="useDefaultConfigArea" value="true"/>
-<stringAttribute key="workspace_bundles" value="de.ulrike-philipp@default:default,org.eclipse.core.filesystem@default:default,org.eclipse.core.resources@default:default,org.eclipse.equinox.security@default:default,org.polymap.cms@default:default,org.polymap.core@default:default,org.polymap.rap.updownload@default:default,org.polymap.rhei.batik@default:default,org.polymap.service.fs@default:default"/>
+<stringAttribute key="workspace_bundles" value="de.ulrike-philipp@5:default,org.eclipse.core.filesystem@default:default,org.eclipse.core.resources@default:default,org.eclipse.equinox.security@default:default,org.polymap.cms@default:default,org.polymap.core@default:default,org.polymap.rap.updownload@default:default,org.polymap.rhei.batik@default:default,org.polymap.service.fs@default:default"/>
 </launchConfiguration>
