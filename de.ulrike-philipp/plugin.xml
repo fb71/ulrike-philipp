@@ -46,7 +46,8 @@
          point="org.polymap.rhei.batik.panels">
       <panel
             class="de.ulrikephilipp.StartPanel"
-            id="de.ulrike-philipp.StartPanel">
+            id="de.ulrike-philipp.StartPanel"
+            stackPriority="100">
       </panel>
       <panel
             class="de.ulrikephilipp.TerminePanel"

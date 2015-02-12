@@ -20,7 +20,6 @@ import org.polymap.rhei.batik.app.DefaultActionBar.PLACE;
 import org.polymap.rhei.batik.app.DefaultAppDesign;
 import org.polymap.rhei.batik.app.DefaultAppNavigator;
 import org.polymap.rhei.batik.app.IAppDesign;
-import org.polymap.rhei.batik.app.StatusManager;
 
 /**
  * 
@@ -54,7 +53,7 @@ public class UpCmsAppDesign
         IAppContext context = BatikApplication.instance().getAppManager().getContext();
         DefaultActionBar actionbar = new DefaultActionBar( context, toolkit );
         actionbar.add( navigator = new DefaultAppNavigator(), PLACE.PANEL_NAVI );
-        actionbar.add( statusManager = new StatusManager(), PLACE.STATUS );
+//        actionbar.add( statusManager = new StatusManager(), PLACE.STATUS );
         return actionbar.createContents( parent, SWT.NONE );
     }
 
