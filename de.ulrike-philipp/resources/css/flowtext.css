@@ -1,16 +1,18 @@
 @CHARSET "UTF-8";
 a {
   /*color: #50D225; */
-  color: #ACACFF
+  color: #BCBCFF;
+  text-decoration: none;
 }
 a:hover {
   /*color: #9999FF;*/
   /*color: #69FF37;*/
   color: #AFAFFF;
   text-shadow: 0 0 2px #c0c0c0;
+  text-decoration: underline;
 }
 p {
-  font-size: 14px;
+  font-size: 15px;
   line-height: 18px;
   text-align: justify;
 }

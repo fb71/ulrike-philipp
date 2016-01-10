@@ -5,55 +5,58 @@
   color: #f8f8f8;
   background-color: #74635C;
   background-image: none;
-  font: 14px/120% 'Droid Sans', Helvetica, Arial, sans-serif;
+  font: 15px/120% 'Roboto', Helvetica, Arial, sans-serif;
 }
 
-/* Navigation */
+Label.up-header, 
+Link.up-header,
+Button.up-header,
+Composite.up-header {
+  font: 35px Roboto, Arial, Helvetica, sans-serif;
+  border: none;
+  padding: 0px 0px;
+  text-decoration: none;
+}
+Button:hover.up-header {
+  text-shadow: 0 0 4px #c0c0c0;
+} 
+
+/* Batik */
 Composite, Composite[BORDER] {
-  font: 14px/120% 'Droid Sans', Helvetica, Arial, sans-serif;
-  color: #f8f8f8;
-  background-color: #74635C;
-  /*background-color: #9B918C;*/
 }
 Shell.atlas-shell {
-  background-image: none;
-  background-color: #74635C;
   border: none;
-  color: #f8f8f8;
 }
-Label.up-header, Composite.up-header {
-  font: 35px/120% Arial, Helvetica, sans-serif;
-  color: #f8f8f8;
-  background-image: none;
-  background-color: #74635C;
-  border: none;
+Composite[BORDER].atlas-panel-header {
+  background-color: transparent;
+  border-radius: 5px;
+  border: 0px solid #e8e8e8;
+}
+Button[PUSH].atlas-panel-header,
+Button[TOGGLE].atlas-panel-header {
+  border-radius: 3px;
+  padding: 0px 0px;
+  spacing: 0px;
+  background-color: transparent;
+  border: 0px solid #6BBAE1;
+  color: #BCBCFF;
+  /*box-shadow: 0px 2px 4px #303030;*/
+}
+Button[PUSH]:hover.atlas-panel-header,
+Button[TOGGLE]:hover.atlas-panel-header {
+  text-shadow: 0 0 2px #c0c0c0;
+  text-decoration: underline;
+}
+Label.atlas-panel-header {
+  /*font: 14px Helvetica, Arial, sans-serif;*/
+  color: #606060;
 }
 
-Button[TOGGLE].atlas-navi, Button[PUSH].atlas-navi {
-  font: 14px/120% 'Droid Sans', Helvetica, Arial, sans-serif;
-  color: #f8f8f8;
-  background-color: #74635C;
-  background-image: none;
-  border: none;
-  text-shadow: none;
-  border-radius: 3px;
-}
-Button[TOGGLE]:selected.atlas-navi, Button[TOGGLE]:hover.atlas-navi, Button[PUSH]:hover.atlas-navi {
-  font: 14px/120% 'Droid Sans', Helvetica, Arial, sans-serif;
-  color: #ffffff;
-  background-color: #9B918C;
-  background-image: none;
-  border: none;
-}
 
 /* 
  * Batik Panel 
  */
 .batik-panel, [BORDER].batik-panel {
-  font: 14px/120% 'Droid Sans', Helvetica, Arial, sans-serif;
-  color: #f8f8f8;
-  background-color: #74635C;
-  background-image: none;
 }
 
 /* 
@@ -66,7 +69,7 @@ Composite.batik-panel-section-client, Composite[BORDER].batik-panel-section-clie
   /*background-color: #74635C;*/
 }
 Label.batik-panel-section-title {
-  font: 22px/100% 'Droid Sans', Helvetica, Arial, sans-serif;
+  font: 24px/100% Roboto, Helvetica, Arial, sans-serif;
   background-color: #74635C;
   color: #f8f8f8;
   border: none;
@@ -98,7 +101,7 @@ Label-SeparatorLine[SHADOW_OUT] {
 
 /* */
 Label {
-  font: 14px/120% 'Droid Sans', Helvetica, Arial, sans-serif;
+  font: 15px/120% Roboto, Helvetica, Arial, sans-serif;
   color: #f8f8f8;
 }
 

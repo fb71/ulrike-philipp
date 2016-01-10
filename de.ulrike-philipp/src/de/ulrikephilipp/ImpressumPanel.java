@@ -20,8 +20,6 @@ import org.apache.commons.logging.LogFactory;
 import org.eclipse.swt.widgets.Composite;
 
 import org.polymap.rhei.batik.DefaultPanel;
-import org.polymap.rhei.batik.IAppContext;
-import org.polymap.rhei.batik.IPanelSite;
 import org.polymap.rhei.batik.PanelIdentifier;
 import org.polymap.rhei.batik.toolkit.IPanelSection;
 import org.polymap.rhei.batik.toolkit.IPanelToolkit;
@@ -42,22 +40,11 @@ public class ImpressumPanel
 
     public static final PanelIdentifier ID = new PanelIdentifier( "impressum" );
 
+    
     @Override
-    public boolean init( IPanelSite site, IAppContext context ) {
-        super.init( site, context );
-        if (site.getPath().size() == 1) {
-            getSite().setTitle( "Impressum" );
-            return true;
-        }
-        else {
-            return false;
-        }
-    }
-
-
-    @Override
-    public PanelIdentifier id() {
-        return ID;
+    public boolean wantsToBeShown() {
+        getSite().setTitle( "Impressum" );
+        return getSite().getPath().size() == 2;
     }
 
 

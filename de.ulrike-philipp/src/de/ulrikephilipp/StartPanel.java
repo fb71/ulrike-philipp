@@ -9,8 +9,6 @@ import org.apache.commons.logging.LogFactory;
 import org.eclipse.swt.widgets.Composite;
 
 import org.polymap.rhei.batik.DefaultPanel;
-import org.polymap.rhei.batik.IAppContext;
-import org.polymap.rhei.batik.IPanelSite;
 import org.polymap.rhei.batik.PanelIdentifier;
 import org.polymap.rhei.batik.toolkit.IPanelSection;
 import org.polymap.rhei.batik.toolkit.IPanelToolkit;
@@ -32,16 +30,10 @@ public class StartPanel
 
     public static final PanelIdentifier ID = new PanelIdentifier( "start" );
 
-    @Override
-    public boolean init( IPanelSite site, IAppContext context ) {
-        super.init( site, context );
-        return false;
-    }
-
 
     @Override
-    public PanelIdentifier id() {
-        return ID;
+    public boolean wantsToBeShown() {
+        return getSite().getPath().size() == 1;
     }
 
 
@@ -53,7 +45,7 @@ public class StartPanel
         ContentProvider cp = ContentProvider.instance();
 
         IPanelSection welcome = tk.createPanelSection( parent, "Willkommen" );
-        welcome.addConstraint( new PriorityConstraint( 10 ), new MinWidthConstraint( 300, 10 ) );
+        welcome.addConstraint( new PriorityConstraint( 10 ), new MinWidthConstraint( 350, 10 ) );
         ContentObject welcomeContent = cp.findContent( "frontpage/willkommen.txt" );
         tk.createFlowText( welcome.getBody(), welcomeContent.content() + "</br>" );
         //tk.createFlowText( welcome.getBody(), "Krisenbegleitung · Strukturberatung · Seminare<br/>Einzelpersonen · Paare · Unternehmen<br/>Leipzig · Bundesweit · Telefonisch " );
@@ -70,7 +62,7 @@ public class StartPanel
         for (ContentObject co : cp.listContent( "frontpage" )) {
             if (!co.title().startsWith( "willkommen" )) {
                 IPanelSection section = tk.createPanelSection( parent, co.title() );
-                section.addConstraint( new PriorityConstraint( 0 ) );
+                section.addConstraint( new PriorityConstraint( 0 ), new MinWidthConstraint( 350, 0 ) );
                 tk.createFlowText( section.getBody(), co.content() + "</br>" );
             }
         }

@@ -14,6 +14,8 @@
  */
 package de.ulrikephilipp;
 
+import java.util.Locale;
+
 import org.osgi.framework.BundleContext;
 import org.osgi.framework.ServiceReference;
 import org.osgi.service.http.HttpService;
@@ -21,6 +23,11 @@ import org.osgi.service.http.NamespaceException;
 import org.osgi.util.tracker.ServiceTracker;
 
 import org.eclipse.ui.plugin.AbstractUIPlugin;
+
+import org.polymap.core.security.SecurityContext;
+import org.polymap.core.security.StandardConfiguration;
+
+import org.polymap.cms.ContentProvider;
 
 /**
  * 
@@ -49,6 +56,16 @@ public class UpPlugin
         super.start( context );
         instance = this;
 
+        // JAAS config: no dialog; let LoginPanel create UI
+        SecurityContext.registerConfiguration( () -> new StandardConfiguration() {
+            @Override
+            public String getConfigName() {
+                return SecurityContext.SERVICES_CONFIG_NAME;
+            }
+        });
+        
+        ContentProvider.instance().defaultLocale.set( Locale.GERMAN );
+        
         // register HTTP resource
         httpServiceTracker = new ServiceTracker( context, HttpService.class.getName(), null ) {
             public Object addingService( ServiceReference reference ) {

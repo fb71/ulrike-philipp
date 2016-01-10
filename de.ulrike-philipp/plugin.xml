@@ -15,15 +15,19 @@
       <branding
             id="de.ulrike-philipp.branding"
             themeId="de.ulrike-philipp.theme"
-            title="Ullis">
+            title="Ulrike Philipp">
          <additionalHeaders>
             <link
                   href="upres/css/flowtext.css"
                   rel="stylesheet"></link>            
             <link
-                  href="http://fonts.googleapis.com/css?family=Droid+Sans"
+                  href="batikres/css/roboto.css"
                   rel="stylesheet">
             </link>
+            <!--link
+                  href="http://fonts.googleapis.com/css?family=Droid+Sans"
+                  rel="stylesheet">
+            </link-->
          </additionalHeaders>
       </branding>
    </extension>
@@ -57,6 +61,18 @@
             class="de.ulrikephilipp.ImpressumPanel"
             id="de.ulrike-philipp.ImpressumPanel">
       </panel>
+   </extension>
+   <extension
+         id="de.ulrike-philipp.app"
+         point="org.eclipse.core.runtime.applications">
+      <application
+            cardinality="singleton-global"
+            thread="main"
+            visible="true">
+         <run
+               class="de.ulrikephilipp.UpApplication">
+         </run>
+      </application>
    </extension>
 
 </plugin>

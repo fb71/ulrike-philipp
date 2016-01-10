@@ -1,25 +1,30 @@
 /* 
- * Copyright (C) 2014-2015, Falko Bräutigam. All rights reserved.
+ * Copyright (C) 2014-2016, Falko Bräutigam. All rights reserved.
  */
 package de.ulrikephilipp;
 
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
+
 import org.eclipse.swt.SWT;
+import org.eclipse.swt.events.SelectionAdapter;
+import org.eclipse.swt.events.SelectionEvent;
 import org.eclipse.swt.graphics.Rectangle;
+import org.eclipse.swt.widgets.Button;
 import org.eclipse.swt.widgets.Composite;
+import org.eclipse.swt.widgets.Control;
 import org.eclipse.swt.widgets.Display;
-import org.eclipse.swt.widgets.Label;
 import org.eclipse.swt.widgets.Shell;
 
+import org.polymap.core.ui.FormDataFactory;
 import org.polymap.core.ui.FormLayoutFactory;
 import org.polymap.core.ui.UIUtils;
 
 import org.polymap.rhei.batik.BatikApplication;
 import org.polymap.rhei.batik.IAppContext;
-import org.polymap.rhei.batik.app.DefaultActionBar;
-import org.polymap.rhei.batik.app.DefaultActionBar.PLACE;
-import org.polymap.rhei.batik.app.DefaultAppDesign;
-import org.polymap.rhei.batik.app.DefaultAppNavigator;
-import org.polymap.rhei.batik.app.IAppDesign;
+import org.polymap.rhei.batik.IPanel;
+import org.polymap.rhei.batik.PanelPath;
+import org.polymap.rhei.batik.toolkit.md.MdAppDesign;
 
 /**
  * 
@@ -27,20 +32,17 @@ import org.polymap.rhei.batik.app.IAppDesign;
  * @author <a href="http://www.polymap.de">Falko Bräutigam</a>
  */
 public class UpCmsAppDesign
-        extends DefaultAppDesign 
-        implements IAppDesign {
+        extends MdAppDesign {
 
-    public static final int         MAX_CONTENT_WIDTH = 820;
+    private static Log log = LogFactory.getLog( UpCmsAppDesign.class );
+
+    public static final int         UP_MAX_CONTENT_WIDTH = 820;
     
     
     @Override
-    public Shell createMainWindow( Display display ) {
+    public Shell createMainWindow( @SuppressWarnings("hiding") Display display ) {
         super.createMainWindow( display );
         
-        Rectangle bounds = display.getBounds();
-        int margins = Math.max( bounds.width - MAX_CONTENT_WIDTH, 0 );
-        mainWindow.setLayout( FormLayoutFactory.defaults().margins( 0, margins/2, 10, margins/2 ).create() );
-
         // FIXME
         UIUtils.activateCallback( "cms-fix-links" );
         
@@ -49,12 +51,57 @@ public class UpCmsAppDesign
 
     
     @Override
-    protected Composite fillActionArea( Composite parent ) {
-        IAppContext context = BatikApplication.instance().getAppManager().getContext();
-        DefaultActionBar actionbar = new DefaultActionBar( context, toolkit );
-        actionbar.add( navigator = new DefaultAppNavigator(), PLACE.PANEL_NAVI );
-//        actionbar.add( statusManager = new StatusManager(), PLACE.STATUS );
-        return actionbar.createContents( parent, SWT.NONE );
+    protected void updateMainWindowLayout() {
+        Rectangle displayArea = Display.getCurrent().getBounds();
+
+        int marginsWidth = Math.max( (displayArea.width - UP_MAX_CONTENT_WIDTH)/2, 10 );
+        int width = displayArea.width - (marginsWidth*2);
+        int spacing = (int)(width * 0.04);
+        log.info( "adaptLayout(): display width=" + displayArea.width + " -> spacing=" + spacing );
+        
+        // panel layout
+        panelLayoutSettings.spacing = spacing;
+        
+        // app layout
+        appLayoutSettings.spacing = spacing;
+        appLayoutSettings.marginLeft = appLayoutSettings.marginRight = marginsWidth;
+        
+        mainWindow.setLayout( FormLayoutFactory.defaults().margins( 
+                appLayoutSettings.marginTop, appLayoutSettings.marginRight, 
+                appLayoutSettings.marginBottom, appLayoutSettings.marginLeft ).create() );
+        
+        mainWindow.layout( true );
+    }
+
+
+    @Override
+    protected void createPanelDecoration( IPanel panel, Composite head ) {
+        super.createPanelDecoration( panel, head );
+
+        head.setLayout( FormLayoutFactory.defaults().margins( 0 ).spacing( 5 ).create() );
+
+        // closeBtn
+        Control closeBtn = head.getChildren()[0];
+        if (closeBtn instanceof Button) {
+            ((Button)closeBtn).setText( "< Zurück" );
+            ((Button)closeBtn).setImage( null );
+            closeBtn.setLayoutData( FormDataFactory.filled().clearRight().create() );
+        }
+    }
+
+
+    @Override
+    protected Button createSwitcherButton( Composite switcher, IPanel panel ) {
+        int btnCount = switcher.getChildren().length;
+
+        Button result = super.createSwitcherButton( switcher, panel );
+        
+        // set width to avoid layout problems
+        result.setLayoutData( btnCount == 0
+                ? FormDataFactory.filled().width( 75 ).clearRight().create()
+                : FormDataFactory.filled().width( 75 ).clearRight().left( switcher.getChildren()[btnCount-1] ).create() );
+
+        return result;
     }
 
 
@@ -62,10 +109,18 @@ public class UpCmsAppDesign
     protected Composite fillHeaderArea( Composite parent ) {
         Composite result = new Composite( parent, SWT.NO_FOCUS );
         UIUtils.setVariant( result, "up-header" );
-        result.setLayout( FormLayoutFactory.defaults().margins( 28, 8 ).create() );
-        Label l = new Label( result, SWT.NONE );
-        UIUtils.setVariant( l, "up-header" );
+        result.setLayout( FormLayoutFactory.defaults().margins( 12, 0, 0, 0 ).create() );
+        
+        Button l = UIUtils.setVariant( new Button( result, SWT.PUSH ), "up-header" );
         l.setText( "ULRIKE PHILIPP" );
+        l.setToolTipText( "Zurück zum Start" );
+        l.addSelectionListener( new SelectionAdapter() {
+            @Override
+            public void widgetSelected( SelectionEvent ev ) {
+                IAppContext context = BatikApplication.instance().getContext();
+                context.openPanel( PanelPath.ROOT, StartPanel.ID );
+            }
+        });
         return result;
     }
 
