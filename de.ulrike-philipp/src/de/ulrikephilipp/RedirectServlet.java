@@ -24,8 +24,7 @@ public class RedirectServlet
     private static Log log = LogFactory.getLog( RedirectServlet.class );
 
     @Override
-    protected void service( HttpServletRequest req, HttpServletResponse resp )
-            throws ServletException, IOException {
+    protected void service( HttpServletRequest req, HttpServletResponse resp ) throws ServletException, IOException {
         String pathInfo = req.getPathInfo();
         log.info( "REDIRECT: request=" + pathInfo );
 

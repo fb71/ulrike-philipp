@@ -3,6 +3,9 @@
  */
 package de.ulrikephilipp;
 
+import static org.polymap.core.ui.FormDataFactory.on;
+import static org.polymap.core.ui.UIUtils.setVariant;
+
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 
@@ -111,7 +114,7 @@ public class UpCmsAppDesign
         UIUtils.setVariant( result, "up-header" );
         result.setLayout( FormLayoutFactory.defaults().margins( 12, 0, 0, 0 ).create() );
         
-        Button l = UIUtils.setVariant( new Button( result, SWT.PUSH ), "up-header" );
+        Button l = on( setVariant( new Button( result, SWT.PUSH ), "up-header" ) ).fill().noRight().control();
         l.setText( "ULRIKE PHILIPP" );
         l.setToolTipText( "Zurück zum Start" );
         l.addSelectionListener( new SelectionAdapter() {
@@ -121,6 +124,9 @@ public class UpCmsAppDesign
                 context.openPanel( PanelPath.ROOT, StartPanel.ID );
             }
         });
+        
+//        Label tel = on( new Label( result, SWT.NONE ) ).fill().noTop().noLeft().control();
+//        tel.setText( "(0179-731 31 56, 0341-228 75 37) " );
         return result;
     }
 
