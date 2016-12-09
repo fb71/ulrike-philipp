@@ -27,6 +27,22 @@ Composite, Composite[BORDER] {
 Shell.atlas-shell {
   border: none;
 }
+Composite.atlas-panel,
+Composite[BORDER].atlas-panel {
+  /* space for header shadow */
+  padding: 1px 3px 0px 3px;
+} 
+Composite.atlas-panel-right,
+Composite[BORDER].atlas-panel-right {
+  padding: 1px 3px 0px 3px;
+  animation: flyInRight 250ms ease-out, flyOutRight 200ms ease-in;   
+}
+Composite.atlas-panel-left,
+Composite[BORDER].atlas-panel-left {
+  padding: 1px 3px 0px 3px;
+  animation: flyInLeft 200ms ease-out, flyOutLeft 150ms ease-in;   
+  /*animation: fadeIn 400ms ease-in, fadeOut 400ms ease-out;*/
+}
 Composite[BORDER].atlas-panel-header {
   background-color: transparent;
   border-radius: 5px;
@@ -49,7 +65,7 @@ Button[TOGGLE]:hover.atlas-panel-header {
 }
 Label.atlas-panel-header {
   /*font: 14px Helvetica, Arial, sans-serif;*/
-  color: #606060;
+  color: #74635C;  /* invisble */
 }
 
 
@@ -64,9 +80,11 @@ Label.atlas-panel-header {
  */
 Composite.batik-panel-section, Composite[BORDER].batik-panel-section {
   background-color: #74635C;
+  border: none;
 }
 Composite.batik-panel-section-client, Composite[BORDER].batik-panel-section-client {
   /*background-color: #74635C;*/
+  border: none;
 }
 Label.batik-panel-section-title {
   font: 24px/100% Roboto, Helvetica, Arial, sans-serif;

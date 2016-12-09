@@ -39,15 +39,15 @@ public class UpCmsAppDesign
 
     private static Log log = LogFactory.getLog( UpCmsAppDesign.class );
 
-    public static final int         UP_MAX_CONTENT_WIDTH = 820;
+    public static final int         MAX_CONTENT_WIDTH = 820;
     
     
     @Override
     public Shell createMainWindow( @SuppressWarnings("hiding") Display display ) {
         super.createMainWindow( display );
         
-        // FIXME
-        UIUtils.activateCallback( "cms-fix-links" );
+//        // XXX
+//        UIUtils.activateCallback( "cms-fix-links" );
         
         return mainWindow;
     }
@@ -57,7 +57,7 @@ public class UpCmsAppDesign
     protected void updateMainWindowLayout() {
         Rectangle displayArea = Display.getCurrent().getBounds();
 
-        int marginsWidth = Math.max( (displayArea.width - UP_MAX_CONTENT_WIDTH)/2, 10 );
+        int marginsWidth = Math.max( (displayArea.width - MAX_CONTENT_WIDTH)/2, 10 );
         int width = displayArea.width - (marginsWidth*2);
         int spacing = (int)(width * 0.04);
         log.info( "adaptLayout(): display width=" + displayArea.width + " -> spacing=" + spacing );
