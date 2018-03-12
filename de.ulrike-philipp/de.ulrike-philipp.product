@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?pde version="3.5"?>
 
-<product name="ulrike-philipp.de" uid="de.ulrike-philipp.product" application="de.ulrike-philipp.app" useFeatures="false" includeLaunchers="false">
+<product name="ulrike-philipp.de" uid="de.ulrike-philipp.product" application="de.ulrike-philipp.app" useFeatures="false" includeLaunchers="true">
 
    <configIni use="">
    </configIni>
@@ -10,7 +10,6 @@
    </launcherArgs>
 
    <launcher>
-      <solaris/>
       <win useIco="false">
          <bmp/>
       </win>
