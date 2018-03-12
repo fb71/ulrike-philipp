@@ -37,8 +37,6 @@ import org.polymap.cms.ContentProvider;
 public class UpPlugin
         extends AbstractUIPlugin {
 
-    Das ist ein compiler-Error als Test für den Buildserver
-    
     public static final String PLUGIN_ID = "de.ulrike-philipp";
 
     private static UpPlugin      instance;
