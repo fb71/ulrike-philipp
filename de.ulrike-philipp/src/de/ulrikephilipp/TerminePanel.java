@@ -42,7 +42,7 @@ public class TerminePanel
 
     @Override
     public boolean wantsToBeShown() {
-        getSite().setTitle( "Termine" );
+        getSite().setTitle( "Workshops" );
         return getSite().getPath().size() == 2;
     }
 
@@ -52,7 +52,7 @@ public class TerminePanel
         IPanelToolkit tk = getSite().toolkit();
         ContentProvider cp = ContentProvider.instance();
 
-        IPanelSection section = tk.createPanelSection( parent, "Termine" );
+        IPanelSection section = tk.createPanelSection( parent, "Workshops" );
         section.addConstraint( new PriorityConstraint( 10 ) );
         ContentObject co = cp.findContent( "Termine.txt" );
         tk.createFlowText( section.getBody(), co.content() + "</br>" );
